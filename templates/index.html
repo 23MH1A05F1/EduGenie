@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie — AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="navbar">
+  <a class="brand" href="#">🧠 <span>EduGenie</span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#features">Features</a><a href="#tools">AI Tools</a>
+  </nav>
+  <button class="theme-btn" onclick="toggleTheme()">☾</button>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="pill">✨ GENERATIVE AI FOR EDUCATION</div>
+    <h1>Learn smarter.<br><span>Understand faster.</span></h1>
+    <p>EduGenie is your lightweight AI-powered educational assistant for questions, quizzes, summaries and personalized learning paths.</p>
+    <div class="hero-actions">
+      <button class="primary" onclick="document.querySelector('#tools').scrollIntoView({behavior:'smooth'})">Start Learning →</button>
+      <a class="secondary" href="/docs" target="_blank">API Docs</a>
+    </div>
+    <div class="stats"><div><b>4+</b><small>AI tools</small></div><div><b>FastAPI</b><small>Backend</small></div><div><b>AI</b><small>Local + Cloud</small></div></div>
+  </div>
+  <div class="hero-card">
+    <div class="card-top"><span>EduGenie AI</span><span class="online">● Online</span></div>
+    <div class="chat-preview"><div class="bubble user">Explain machine learning simply.</div><div class="bubble bot">Machine learning lets computers learn patterns from data and use those patterns to make predictions or decisions.</div><div class="typing">● ● ●</div></div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="section-head"><span class="eyebrow">CORE FEATURES</span><h2>Everything you need to learn</h2><p>One focused workspace for active learning.</p></div>
+  <div class="feature-grid">
+    <article><div class="icon">💡</div><h3>Intelligent Q&A</h3><p>Ask educational questions and get clear explanations with examples.</p></article>
+    <article><div class="icon">📝</div><h3>AI Quiz Generator</h3><p>Generate topic-specific multiple-choice questions and check your score.</p></article>
+    <article><div class="icon">📚</div><h3>Smart Summarizer</h3><p>Turn lengthy study material into concise revision notes.</p></article>
+    <article><div class="icon">🚀</div><h3>Learning Roadmap</h3><p>Generate structured beginner-to-advanced learning plans.</p></article>
+  </div>
+</section>
+
+<section id="tools" class="section tools">
+  <div class="section-head"><span class="eyebrow">AI WORKSPACE</span><h2>Try EduGenie</h2><p>Choose a tool and start learning.</p></div>
+  <div class="tabs">
+    <button class="tab active" onclick="showTool('chatTool',this)">🤖 Ask AI</button>
+    <button class="tab" onclick="showTool('quizTool',this)">📝 Quiz</button>
+    <button class="tab" onclick="showTool('summaryTool',this)">📖 Summarize</button>
+    <button class="tab" onclick="showTool('roadmapTool',this)">🗺 Roadmap</button>
+  </div>
+
+  <div id="chatTool" class="tool-panel active">
+    <h3>Ask EduGenie anything</h3><p class="muted">Try: “What is the largest ocean?”</p>
+    <div id="chatMessages" class="messages"><div class="message bot">👋 Hi! Ask me an educational question.</div></div>
+    <div class="input-row"><input id="questionInput" placeholder="Ask a question..."><button class="primary" onclick="askQuestion()">Send</button></div>
+  </div>
+
+  <div id="quizTool" class="tool-panel">
+    <h3>Generate a Quiz</h3>
+    <div class="form-grid"><label>Topic<input id="quizTopic" value="Python"></label><label>Difficulty<select id="quizDifficulty"><option>easy</option><option selected>medium</option><option>hard</option></select></label><label>Questions<select id="quizCount"><option>5</option><option>10</option></select></label></div>
+    <button class="primary" onclick="generateQuiz()">Generate Quiz</button>
+    <div id="quizResult"></div>
+  </div>
+
+  <div id="summaryTool" class="tool-panel">
+    <h3>Summarize Learning Material</h3>
+    <textarea id="summaryText" placeholder="Paste your study material here..."></textarea>
+    <button class="primary" onclick="summarizeText()">Create Summary</button>
+    <pre id="summaryResult" class="result"></pre>
+  </div>
+
+  <div id="roadmapTool" class="tool-panel">
+    <h3>Create a Learning Roadmap</h3>
+    <div class="form-grid"><label>Topic<input id="roadmapTopic" value="SQL"></label><label>Level<select id="roadmapLevel"><option>beginner</option><option>intermediate</option><option>advanced</option></select></label><label>Weeks<select id="roadmapWeeks"><option>6</option><option>8</option><option>10</option></select></label></div>
+    <button class="primary" onclick="generateRoadmap()">Generate Roadmap</button>
+    <div id="roadmapResult"></div>
+  </div>
+</section>
+
+<section class="section architecture">
+  <div class="section-head"><span class="eyebrow">ARCHITECTURE</span><h2>Simple, modular and extensible</h2></div>
+  <div class="arch">
+    <div>🌐<b>HTML + CSS + JS</b><small>Responsive UI</small></div><span>→</span>
+    <div>⚡<b>FastAPI</b><small>REST APIs</small></div><span>→</span>
+    <div>🧠<b>AI Service</b><small>Local / Cloud</small></div>
+  </div>
+</section>
+</main>
+
+<footer>EduGenie • AI-powered educational assistant • Built with FastAPI</footer>
+<script src="/static/js/script.js"></script>
+</body>
+</html>
