@@ -1,4 +1,6 @@
-# EduGenie
+# EduGenie 
+
+https://edugenie-ahdr.onrender.com/
 
 A lightweight AI-powered educational assistant built with FastAPI and a responsive HTML/CSS/JavaScript frontend.
 
